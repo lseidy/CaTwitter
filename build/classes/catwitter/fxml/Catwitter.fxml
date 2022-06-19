@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.CatwitterController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;">
+         <right>
+            <AnchorPane prefHeight="525.0" prefWidth="244.0" style="-fx-background-color: #FFE4C4;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="userText" alignment="CENTER_RIGHT" layoutX="19.0" layoutY="200.0" prefHeight="27.0" prefWidth="206.0" promptText="username" style="-fx-border-color: #00008B;" />
+                  <PasswordField fx:id="passwordText" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="262.0" prefHeight="27.0" prefWidth="204.0" promptText="password" style="-fx-border-color: #00008B;" />
+                  <Button fx:id="loginButton" layoutX="48.0" layoutY="419.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #FA8072;" text="Login" textFill="#1800ef">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="72.0" layoutY="96.0" text="Entrar" textAlignment="CENTER" textFill="#2e180f" textOverrun="CENTER_WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Candara Light" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </right>
+         <top>
+            <HBox prefHeight="27.0" prefWidth="641.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <HBox prefHeight="48.0" prefWidth="645.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <Pane prefHeight="270.0" prefWidth="266.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="89.0" fitWidth="97.0" layoutX="560.0" layoutY="436.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/logo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="406.0" fitWidth="390.0" layoutX="266.0" layoutY="-71.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/patas.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="121.0" layoutY="225.0" text="CaTwitter" textFill="#3b9ea9">
+                     <font>
+                        <Font name="Corbel Light" size="80.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="288.0" layoutY="299.0" text="your daily meow">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
