@@ -11,9 +11,9 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.CadastroController">
    <children>
-      <BorderPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;">
+      <BorderPane blendMode="EXCLUSION" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;">
          <top>
-            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="641.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" blendMode="RED" prefHeight="27.0" prefWidth="641.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER">
                <children>
                   <Label contentDisplay="CENTER" text="Logado como Administrador">
                      <font>
@@ -24,16 +24,16 @@
             </HBox>
          </top>
          <bottom>
-            <HBox prefHeight="48.0" prefWidth="645.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER" />
+            <HBox prefHeight="0.0" prefWidth="900.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER" />
          </bottom>
          <left>
-            <AnchorPane prefHeight="525.0" prefWidth="898.0" BorderPane.alignment="CENTER">
+            <AnchorPane blendMode="DARKEN" prefHeight="462.0" prefWidth="895.0" BorderPane.alignment="CENTER">
                <children>
                   <Pane layoutX="203.0" layoutY="14.0" opacity="0.79" prefHeight="74.0" prefWidth="494.0" style="-fx-background-color: #F4A460;">
                      <children>
-                        <Label contentDisplay="CENTER" layoutX="147.0" layoutY="10.0" prefHeight="54.0" prefWidth="200.0" text="Area de Cadastro">
+                        <Label blendMode="ADD" contentDisplay="CENTER" layoutX="110.0" layoutY="10.0" prefHeight="54.0" prefWidth="279.0" text="Área de Cadastro">
                            <font>
-                              <Font name="Corbel Bold" size="26.0" />
+                              <Font name="Corbel Bold Italic" size="37.0" />
                            </font>
                         </Label>
                      </children>
@@ -62,12 +62,15 @@
                   <TextField fx:id="emailText" layoutX="212.0" layoutY="225.0" prefHeight="30.0" prefWidth="563.0" />
                   <TextField fx:id="userText" layoutX="212.0" layoutY="288.0" prefHeight="30.0" prefWidth="237.0" />
                   <TextField fx:id="passwordText" layoutX="211.0" layoutY="354.0" prefHeight="30.0" prefWidth="238.0" />
-                  <Button fx:id="cadastroButton" layoutX="510.0" layoutY="303.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="209.0" text="Cadastrar">
+                  <Button fx:id="cadastroButton" blendMode="DARKEN" layoutX="510.0" layoutY="303.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="209.0" text="Cadastrar">
                      <font>
-                        <Font size="23.0" />
+                        <Font name="Consolas Italic" size="29.0" />
                      </font>
                   </Button>
-                  <Button fx:id="logoutButton" layoutX="798.0" layoutY="491.0" mnemonicParsing="false" onAction="#click_logout" prefHeight="26.0" prefWidth="86.0" text="Terminar" />
+                  <Button fx:id="logoutButton" alignment="TOP_LEFT" blendMode="ADD" layoutX="798.0" layoutY="491.0" mnemonicParsing="false" onAction="#click_logout" prefHeight="26.0" prefWidth="86.0" text="Terminar">
+                     <font>
+                        <Font name="Consolas" size="13.0" />
+                     </font></Button>
                </children>
             </AnchorPane>
          </left>

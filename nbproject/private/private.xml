@@ -4,11 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Catwitter/src/catwitter/FeedController.java</file>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Catwitter/src/catwitter/fxml/Feed.fxml</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Catwitter/src/catwitter/PerfilController.java</file>
             <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Catwitter/src/catwitter/CatwitterController.java</file>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Catwitter/src/catwitter/CadastroController.java</file>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Catwitter/src/essential/Control.java</file>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Catwitter/src/essential/Users.java</file>
             <file>file:/C:/Users/lucas/Documents/NetBeansProjects/Catwitter/src/catwitter/Main.java</file>
         </group>
     </open-files>

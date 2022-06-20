@@ -38,14 +38,22 @@ public class FeedController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         user = CatwitterController.getCheck();
-       // System.out.println(CatwitterController.getCheck().getUsername())
-       //loggedText.setText(user.getUsername());
-        
+        //setItens(user);
         logoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Main.changeScreen(1);
             }
         });
-    }    
+        perfilButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                PerfilController.setUser(CatwitterController.getCheck());
+                Main.changeScreen(4);
+            }
+        });
+    }
+    public void setItens(essential.Users user){
+        loggedText.setText(user.getUsername());
+    } 
 }

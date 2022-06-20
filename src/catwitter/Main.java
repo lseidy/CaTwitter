@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
    
-    private static Scene sceneLogin, sceneAdm, sceneFeed;
+    private static Scene sceneLogin, sceneAdm, sceneFeed, scenePerfil;
     private static Stage primaryStage;
     protected static essential.Control control = new essential.Control();
     
@@ -21,11 +21,13 @@ public class Main extends Application {
         FXMLLoader login = new FXMLLoader(getClass().getResource("fxml/Catwitter.fxml"));
         FXMLLoader adm = new FXMLLoader(getClass().getResource("fxml/Cadastro.fxml"));
         FXMLLoader feed = new FXMLLoader(getClass().getResource("fxml/Feed.fxml"));
+        FXMLLoader perfil = new FXMLLoader(getClass().getResource("fxml/Perfil.fxml"));
         
         primaryStage = stage;
         
         primaryStage.setTitle("Login");
-       
+        
+        Parent parentPerfil = perfil.load();
         Parent parentLogin = login.load();
         Parent parentAdm = adm.load();
         Parent parentFeed = feed.load();
@@ -33,6 +35,7 @@ public class Main extends Application {
         sceneFeed = new Scene(parentFeed);
         sceneLogin = new Scene(parentLogin);
         sceneAdm = new Scene(parentAdm);
+        scenePerfil = new Scene(parentPerfil);
         
         
         stage.setScene(sceneLogin);
@@ -48,6 +51,9 @@ public class Main extends Application {
                 break;
             case 3:
                 primaryStage.setScene(sceneFeed);
+                break;
+            case 4:
+                primaryStage.setScene(scenePerfil);
                 break;
         }
     }

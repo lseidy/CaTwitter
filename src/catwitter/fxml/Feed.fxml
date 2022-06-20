@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.FeedController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.FeedController">
    <top>
-      <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="900.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="TOP_LEFT">
+      <HBox alignment="CENTER_LEFT" blendMode="EXCLUSION" prefHeight="42.0" prefWidth="900.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="TOP_LEFT">
          <children>
             <Label fx:id="loggedText" alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="170.0" textAlignment="CENTER">
                <font>
@@ -24,9 +24,9 @@
                   <Insets />
                </HBox.margin>
             </Label>
-            <Text fill="#201e1e" strokeType="OUTSIDE" strokeWidth="0.0" text="Feed">
+            <Text fill="#201e1e" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Feed" wrappingWidth="66.37890625">
                <font>
-                  <Font name="Calibri Bold" size="20.0" />
+                  <Font name="Consolas Bold" size="22.0" />
                </font>
                <HBox.margin>
                   <Insets bottom="6.0" left="340.0" top="12.0" />
@@ -36,11 +36,11 @@
       </HBox>
    </top>
    <left>
-      <VBox prefHeight="574.0" prefWidth="169.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER">
+      <VBox blendMode="EXCLUSION" prefHeight="574.0" prefWidth="169.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" style="-fx-background-color: #F5DEB3;">
                <children>
-                  <Button fx:id="searchButton" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="30.0" prefWidth="179.0" style="-fx-background-color: transparent;" text="Buscar Pet-Migo">
+                  <Button fx:id="searchButton" alignment="TOP_LEFT" blendMode="DARKEN" mnemonicParsing="false" prefHeight="33.0" prefWidth="181.0" style="-fx-background-color: transparent;" text="Buscar Pet-Migo">
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -54,6 +54,9 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <font>
+                        <Font name="Consolas" size="14.0" />
+                     </font>
                   </Button>
                </children>
                <opaqueInsets>
@@ -68,7 +71,7 @@
             </HBox>
             <HBox prefHeight="39.0" prefWidth="171.0" style="-fx-background-color: #F5DEB3;">
                <children>
-                  <Button fx:id="perfilButton" alignment="TOP_LEFT" minWidth="48.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="170.0" style="-fx-background-color: transparent;" text="Perfil">
+                  <Button fx:id="perfilButton" alignment="TOP_LEFT" blendMode="DARKEN" minWidth="48.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="170.0" style="-fx-background-color: transparent;" text="Perfil">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -91,17 +94,15 @@
                   <Insets left="-5.0" />
                </padding>
             </HBox>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-            <Pane prefHeight="54.0" prefWidth="167.0" />
-            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Pane blendMode="GREEN" prefHeight="495.0" prefWidth="170.0" />
             <Pane prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #F5DEB3;">
                <children>
-                  <Button fx:id="logoutButton" layoutY="-2.0" minWidth="39.0" mnemonicParsing="false" opacity="0.8" prefHeight="44.0" prefWidth="170.0" style="-fx-background-color: transparent; -fx-text-fill: black;" text="Meout" textAlignment="RIGHT" textFill="#000000dd">
+                  <Button fx:id="logoutButton" blendMode="DARKEN" layoutY="-2.0" minWidth="39.0" mnemonicParsing="false" opacity="0.8" prefHeight="44.0" prefWidth="170.0" style="-fx-background-color: transparent; -fx-text-fill: black;" text="Meout" textAlignment="RIGHT" textFill="#000000dd">
                      <font>
                         <Font name="Calibri" size="18.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="28.0" fitWidth="157.0" layoutX="5.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="38.0" fitWidth="28.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/paw.png" />
                      </image>
@@ -118,6 +119,6 @@
       </VBox>
    </left>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+      <VBox blendMode="DARKEN" prefHeight="562.0" prefWidth="929.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
