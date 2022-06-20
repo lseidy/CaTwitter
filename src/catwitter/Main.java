@@ -1,9 +1,5 @@
 package catwitter;
 
-import java.text.CollationElementIterator;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +12,7 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
    
-    private static Scene sceneLogin, sceneAdm;
+    private static Scene sceneLogin, sceneAdm, sceneFeed;
     private static Stage primaryStage;
     protected static essential.Control control = new essential.Control();
     
@@ -24,16 +20,20 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader login = new FXMLLoader(getClass().getResource("fxml/Catwitter.fxml"));
         FXMLLoader adm = new FXMLLoader(getClass().getResource("fxml/Cadastro.fxml"));
+        FXMLLoader feed = new FXMLLoader(getClass().getResource("fxml/Feed.fxml"));
         
         primaryStage = stage;
         
         primaryStage.setTitle("Login");
-        
+       
         Parent parentLogin = login.load();
         Parent parentAdm = adm.load();
+        Parent parentFeed = feed.load();
        
+        sceneFeed = new Scene(parentFeed);
         sceneLogin = new Scene(parentLogin);
         sceneAdm = new Scene(parentAdm);
+        
         
         stage.setScene(sceneLogin);
         stage.show();
@@ -45,6 +45,9 @@ public class Main extends Application {
                 break;
             case 2:
                 primaryStage.setScene(sceneAdm);
+                break;
+            case 3:
+                primaryStage.setScene(sceneFeed);
                 break;
         }
     }

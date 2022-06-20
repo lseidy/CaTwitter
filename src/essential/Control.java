@@ -12,9 +12,11 @@ import java.util.List;
  * @author lucas
  */
 public class Control extends Users {
-    List<Users> allusers = new ArrayList<Users>();
+    ArrayList<Users> allusers ;
+
 
     public Control() {
+        allusers = new ArrayList();
     }
 
     public List getAllusers() {

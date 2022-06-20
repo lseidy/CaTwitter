@@ -11,54 +11,41 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
  *
  * @author lucas
  */
-public class CadastroController implements Initializable {
+public class FeedController implements Initializable {
 
     @FXML
-    private TextField nomeText;
+    private Button searchButton;
     @FXML
-    private TextField emailText;
-    @FXML
-    private TextField userText;
-    @FXML
-    private TextField passwordText;
-    @FXML
-    private Button cadastroButton;
+    private Button perfilButton;
     @FXML
     private Button logoutButton;
-    
     private essential.Users user;
+    @FXML
+    private Label loggedText;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        cadastroButton.setOnAction(new EventHandler<ActionEvent>() {
+        user = CatwitterController.getCheck();
+       // System.out.println(CatwitterController.getCheck().getUsername())
+       //loggedText.setText(user.getUsername());
+        
+        logoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                
-                user = new essential.Users(userText.getText(),passwordText.getText(),nomeText.getText(),emailText.getText() );
-                Main.control.setAllusers(user);
-                
-                userText.setText("");
-                passwordText.setText("");
-                nomeText.setText("");
-                emailText.setText("");
+                Main.changeScreen(1);
             }
         });
     }    
-
-    @FXML
-    private void click_logout(ActionEvent event) {
-        Main.changeScreen(1);
-    }
-    
 }

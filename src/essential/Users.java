@@ -6,6 +6,13 @@ import java.util.List;
 
 
 public class Users {
+
+    @Override
+    public String toString() {
+        return  "username: " + username + 
+                "\n name=" + name + 
+                "\n email=" + email;
+    }
     public Users() {
     }
 
