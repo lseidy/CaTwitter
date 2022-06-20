@@ -31,10 +31,7 @@ public class CatwitterController implements Initializable {
     private static essential.Users check;
     private static int i;
 
-    public static int getI() {
-        return i;
-    }
-
+    
     public static Users getCheck() {
         return check;
    }
@@ -59,6 +56,9 @@ public class CatwitterController implements Initializable {
                         check = (Users) Main.control.getAllusers().get(i);
                         if(check.getUsername().equals(userText.getText())){
                             if(check.getPassword().equals(passwordText.getText())){
+                                Main.control.setIndex(i);
+                                userText.setText("");
+                        passwordText.setText("");
                                 Main.changeScreen(3);
                             }
                         }

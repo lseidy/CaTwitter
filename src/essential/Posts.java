@@ -3,14 +3,34 @@ package essential;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Posts extends Users {
-    private static final List postsAll = new ArrayList();
-    public static void setPostsAll(String author, String post, String timestamp) {
-        Posts.postsAll.add(author);
-        Posts.postsAll.add(timestamp);
-        Posts.postsAll.add(post);
+public class Posts  {
+    private String author;
+    private String timestamp;
+    private String post;
+
+    public String getAuthor() {
+        return author;
     }
-    public List getPostsAll() {
-        return postsAll;
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getPost() {
+        return post;
+    }
+
+    public void setPost(String post) {
+        this.post = post;
+    }
+
+
 }

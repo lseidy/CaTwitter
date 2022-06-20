@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Users {
+public class Users extends Posts{
 
     @Override
     public String toString() {
@@ -25,9 +25,11 @@ public class Users {
     private String email;
     private String formacao;
     private List links;
-    private List<String> posts = new ArrayList<>();
+    private Posts post;
+    private ArrayList<Posts> posts = new ArrayList<>();
     private String adminUser = "admin";
     private String adminPassWord = "UFP31";
+    
 
     public String getAdminUser() {
         return adminUser;
@@ -108,15 +110,21 @@ public class Users {
     public void setLinks(List links) {
         this.links = links;
     }
-    public List<String> getPosts() {
+    public ArrayList<Posts> getPosts() {
         return posts;
     }
 
-    public void setPosts(String post) {
-        this.posts.add(post);
+    public void setPosts(String mensagem) {
+        post = new Posts();
+        
+        post.setPost(mensagem);
+        post.setAuthor(this.getUsername());
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        this.posts.add(String.valueOf(timestamp));
-        Posts.setPostsAll(this.username,post, String.valueOf(timestamp));
+        post.setTimestamp(String.valueOf(timestamp));
+        
+        this.posts.add(post);
+        //Control.setPostsAll(post);
+        
     }
 
 }

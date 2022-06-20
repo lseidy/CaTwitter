@@ -1,5 +1,6 @@
 package catwitter;
 
+import essential.Users;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,6 +16,8 @@ public class Main extends Application {
     private static Scene sceneLogin, sceneAdm, sceneFeed, scenePerfil;
     private static Stage primaryStage;
     protected static essential.Control control = new essential.Control();
+
+
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -53,6 +56,9 @@ public class Main extends Application {
                 primaryStage.setScene(sceneFeed);
                 break;
             case 4:
+                Users info = (Users) control.getAllusers().get(control.getIndex());
+                PerfilController.setUser(info);
+                //PerfilController(info.getEmail(), info.getFormacao(), info.getCelular(), info.getName(), info.getUsername());
                 primaryStage.setScene(scenePerfil);
                 break;
         }

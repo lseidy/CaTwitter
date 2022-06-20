@@ -86,9 +86,7 @@
                   <Insets left="18.0" />
                </padding>
             </HBox>
-            <Pane blendMode="DIFFERENCE" prefHeight="200.0" prefWidth="200.0" />
-            <Pane prefHeight="54.0" prefWidth="167.0" />
-            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Pane blendMode="DIFFERENCE" prefHeight="440.0" prefWidth="170.0" />
             <Pane prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #F5DEB3;">
                <children>
                   <Button fx:id="logoutButton" blendMode="DARKEN" layoutY="-2.0" minWidth="39.0" mnemonicParsing="false" opacity="0.8" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: transparent; -fx-text-fill: black;" text="Meout" textAlignment="RIGHT" textFill="#000000dd">
@@ -115,17 +113,17 @@
    <center>
       <VBox blendMode="DARKEN" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox blendMode="DARKEN" prefHeight="127.0" prefWidth="731.0">
+            <HBox blendMode="DARKEN" prefHeight="111.0" prefWidth="730.0">
                <children>
-                  <ImageView blendMode="GREEN" fitHeight="122.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView blendMode="GREEN" fitHeight="124.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/logo.png" />
                      </image>
                   </ImageView>
-                  <GridPane blendMode="BLUE">
+                  <GridPane blendMode="BLUE" prefHeight="111.0" prefWidth="272.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.20001220703125" minWidth="10.0" prefWidth="82.4000244140625" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.5999755859375" minWidth="10.0" prefWidth="181.5999755859375" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -169,10 +167,10 @@
                            </GridPane.margin></Label>
                      </children>
                   </GridPane>
-                  <GridPane blendMode="BLUE">
+                  <GridPane blendMode="BLUE" prefHeight="111.0" prefWidth="370.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.199951171875" minWidth="10.0" prefWidth="76.6000244140625" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.4000244140625" minWidth="10.0" prefWidth="285.3999755859375" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -180,21 +178,65 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="emailLabel" text="Email:">
+                        <Label text="Email:">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                            <font>
                               <Font name="Consolas Bold" size="14.0" />
                            </font></Label>
-                        <Label GridPane.columnIndex="1">
+                        <Label fx:id="emailLabel" contentDisplay="CENTER" prefHeight="18.0" prefWidth="278.0" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </Label>
+                        <Button fx:id="alterarLabel" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" style="-fx-background-color: #D2B48C; -fx-text-fill: Black;" text="Alterar" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Calibri" size="12.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="200.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Label prefHeight="18.0" prefWidth="67.0" text="Celular:" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Consolas Bold" size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="celLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="284.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
+            </HBox>
+            <Pane opacity="0.75" prefHeight="4.0" prefWidth="730.0" style="-fx-background-color: black;" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="thoughtsPost" alignment="CENTER_RIGHT" opacity="0.68" prefHeight="63.0" prefWidth="631.0" promptText="Post you meow thoughts" style="-fx-prompt-text-fill: black; -fx-background-color: #DEB887;" styleClass="-fx-prompt-text-fill" />
+                  <Button fx:id="postButton" minWidth="44.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="44.0" style="-fx-background-color: #D2B48C;">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/write.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
             </HBox>
          </children>
       </VBox>

@@ -5,6 +5,7 @@
 package catwitter;
 
 import essential.Users;
+import java.awt.Desktop.Action;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -35,6 +36,7 @@ public class PerfilController implements Initializable {
     private Label emailLabel;
     @FXML
     private Label formLabel;
+    @FXML
     private Label celLabel;
     private static essential.Users info;
 
@@ -43,6 +45,14 @@ public class PerfilController implements Initializable {
     }
     @FXML
     private Label nameLabel;
+    @FXML
+    private Label userLabel;
+    @FXML
+    private Button alterarLabel;
+    @FXML
+    private TextField thoughtsPost;
+    @FXML
+    private Button postButton;
 
 
     /**
@@ -50,9 +60,13 @@ public class PerfilController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //initializeInfo(user);
-        //System.out.println(CatwitterController.getI());
-        
+        postButton.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event) {
+               info.setPosts(thoughtsPost.getText());
+               thoughtsPost.setText("");
+            }
+        });
         logoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -62,17 +76,17 @@ public class PerfilController implements Initializable {
         feedButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                setInfo();
                 Main.changeScreen(3);
             }
         });
-    }    
-
-    public void initializeInfo(essential.Users info) {
+    }
+    public void setInfo(){
         emailLabel.setText(info.getEmail());
         formLabel.setText(info.getFormacao());
         celLabel.setText(info.getCelular());
-        nameLabel.setText(info.getUsername());
-        
+        nameLabel.setText(info.getName());
+        userLabel.setText(info.getUsername());
     }
     
 }
