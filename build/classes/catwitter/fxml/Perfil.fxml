@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.PerfilController">
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.PerfilController">
    <top>
       <HBox blendMode="EXCLUSION" prefHeight="34.0" prefWidth="900.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER">
          <children>
@@ -152,19 +152,38 @@
                            <font>
                               <Font name="Consolas Bold" size="14.0" />
                            </font></Label>
-                        <Label fx:id="nameLabel" GridPane.columnIndex="1">
+                        <Label fx:id="nameLabel" prefHeight="29.0" prefWidth="154.0" style="-fx-border-color: black;" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
+                           <graphic>
+                              <TextField fx:id="nameTextField" style="-fx-background-color: transparent;">
+                                 <font>
+                                    <Font name="Consolas" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </graphic>
                         </Label>
-                        <Label fx:id="userLabel" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label fx:id="userLabel" prefHeight="29.0" prefWidth="154.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="10.0" />
-                           </GridPane.margin></Label>
-                        <Label fx:id="formLabel" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           </GridPane.margin>
+                           <graphic>
+                              <TextField fx:id="userTextField" style="-fx-background-color: transparent;">
+                                 <font>
+                                    <Font name="Consolas" size="12.0" />
+                                 </font></TextField>
+                           </graphic></Label>
+                        <Label fx:id="formLabel" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="10.0" />
-                           </GridPane.margin></Label>
+                           </GridPane.margin>
+                           <graphic>
+                              <TextField fx:id="formTextField" prefHeight="27.0" prefWidth="150.0" style="-fx-background-color: transparent;">
+                                 <font>
+                                    <Font name="Consolas" size="12.0" />
+                                 </font></TextField>
+                           </graphic></Label>
                      </children>
                   </GridPane>
                   <GridPane blendMode="BLUE" prefHeight="111.0" prefWidth="370.0">
@@ -185,10 +204,17 @@
                            <font>
                               <Font name="Consolas Bold" size="14.0" />
                            </font></Label>
-                        <Label fx:id="emailLabel" contentDisplay="CENTER" prefHeight="18.0" prefWidth="278.0" GridPane.columnIndex="1">
+                        <Label fx:id="emailLabel" contentDisplay="CENTER" prefHeight="29.0" prefWidth="259.0" style="-fx-border-color: black;" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
+                           <graphic>
+                              <TextField fx:id="emailTextField" prefHeight="18.0" prefWidth="233.0" style="-fx-background-color: transparent;">
+                                 <font>
+                                    <Font name="Consolas" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </graphic>
                         </Label>
                         <Button fx:id="alterarLabel" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" style="-fx-background-color: #D2B48C; -fx-text-fill: Black;" text="Alterar" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
@@ -209,7 +235,17 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label fx:id="celLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="284.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="celLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="29.0" prefWidth="259.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <graphic>
+                              <TextField fx:id="celTextField" alignment="CENTER" prefHeight="14.0" prefWidth="254.0" style="-fx-background-color: transparent;">
+                                 <font>
+                                    <Font name="Consolas" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </graphic>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin></Label>
                      </children>
                   </GridPane>
                </children>

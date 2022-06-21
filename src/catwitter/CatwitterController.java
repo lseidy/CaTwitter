@@ -52,13 +52,13 @@ public class CatwitterController implements Initializable {
                         Main.changeScreen(2);
                     }
                 }else{
-                    for (i=0; i<Main.control.getAllusers().size();i++){
+                    for (i=0; i < Main.control.getAllusers().size();i++){
                         check = (Users) Main.control.getAllusers().get(i);
                         if(check.getUsername().equals(userText.getText())){
                             if(check.getPassword().equals(passwordText.getText())){
                                 Main.control.setIndex(i);
                                 userText.setText("");
-                        passwordText.setText("");
+                                passwordText.setText("");
                                 Main.changeScreen(3);
                             }
                         }

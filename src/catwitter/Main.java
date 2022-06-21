@@ -15,7 +15,7 @@ public class Main extends Application {
    
     private static Scene sceneLogin, sceneAdm, sceneFeed, scenePerfil;
     private static Stage primaryStage;
-    protected static essential.Control control = new essential.Control();
+    public static essential.Control control = new essential.Control();
 
 
     
@@ -53,11 +53,11 @@ public class Main extends Application {
                 primaryStage.setScene(sceneAdm);
                 break;
             case 3:
+                //System.out.println(Main.control.getIndex());
                 primaryStage.setScene(sceneFeed);
                 break;
             case 4:
-                Users info = (Users) control.getAllusers().get(control.getIndex());
-                PerfilController.setUser(info);
+                //System.out.println(Main.control.getIndex());
                 //PerfilController(info.getEmail(), info.getFormacao(), info.getCelular(), info.getName(), info.getUsername());
                 primaryStage.setScene(scenePerfil);
                 break;

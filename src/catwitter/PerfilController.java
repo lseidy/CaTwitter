@@ -4,7 +4,8 @@
  */
 package catwitter;
 
-import essential.Users;
+import static catwitter.Main.control;
+import essential.*;
 import java.awt.Desktop.Action;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 
 /**
  * FXML Controller class
@@ -40,9 +42,6 @@ public class PerfilController implements Initializable {
     private Label celLabel;
     private static essential.Users info;
 
-    public static void setUser(Users user) {
-        info = user;
-    }
     @FXML
     private Label nameLabel;
     @FXML
@@ -53,6 +52,18 @@ public class PerfilController implements Initializable {
     private TextField thoughtsPost;
     @FXML
     private Button postButton;
+    @FXML
+    private BorderPane pane;
+    @FXML
+    private TextField nameTextField;
+    @FXML
+    private TextField userTextField;
+    @FXML
+    private TextField formTextField;
+    @FXML
+    private TextField emailTextField;
+    @FXML
+    private TextField celTextField;
 
 
     /**
@@ -60,6 +71,33 @@ public class PerfilController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        alterarLabel.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event) {
+                emptyCells();
+                System.out.println(Main.control.getIndex());
+                Main.control.getAllusers().get(Main.control.getIndex()).setCelular(celTextField.getText());
+                //info.setEmail(emailTextField.getText());
+                //info.setFormacao(formTextField.getText());
+                //info.setName(nameTextField.getText());
+                //info.setUsername(userTextField.getText());
+                setInfo();
+               
+            }
+
+            private void emptyCells() {
+                celTextField.setText("");
+                emailTextField.setText("");
+                formTextField.setText("");
+                nameTextField.setText("");
+                userTextField.setText("");
+                celTextField.setText("");
+                emailTextField.setText("");
+                formTextField.setText("");
+                nameTextField.setText("");
+                userTextField.setText("");
+            }
+        });
         postButton.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event) {
@@ -82,11 +120,12 @@ public class PerfilController implements Initializable {
         });
     }
     public void setInfo(){
-        emailLabel.setText(info.getEmail());
-        formLabel.setText(info.getFormacao());
-        celLabel.setText(info.getCelular());
-        nameLabel.setText(info.getName());
-        userLabel.setText(info.getUsername());
+        System.out.println(Main.control.getAllusers().get(Main.control.getIndex()));
+        emailTextField.setPromptText(Main.control.getAllusers().get(Main.control.getIndex()).getEmail());
+        //formTextField.setPromptText(info.getFormacao());
+        //celTextField.setPromptText(info.getCelular());
+        //nameTextField.setPromptText(info.getName());
+        //userTextField.setPromptText(info.getUsername());
     }
     
 }

@@ -4,6 +4,7 @@
  */
 package catwitter;
 
+import static catwitter.Main.control;
 import essential.Control;
 import essential.Posts;
 import essential.Users;
@@ -39,18 +40,19 @@ public class FeedController implements Initializable {
     private Button perfilButton;
     @FXML
     private Button logoutButton;
-    private essential.Posts control;
     @FXML
     private Label loggedText;
+    private final Control control = Main.control;
+   
     
     @FXML
-    private TableView<Posts> table;
+    private TableView<ArrayList<Posts>> table;
     @FXML
-    private TableColumn<Posts, String> userTable;
+    private TableColumn<ArrayList<Posts>, String> userTable;
     @FXML
-    private TableColumn<Posts, String> dateTable;
+    private TableColumn<ArrayList<Posts>, String> dateTable;
     @FXML
-    private TableColumn<Posts, String> meowTable;
+    private TableColumn<ArrayList<Posts>, String> meowTable;
    
     
 
@@ -75,13 +77,14 @@ public class FeedController implements Initializable {
     }
     
     private void loadTable(ArrayList<Posts> user){
-        ObservableList<Posts> observableList = FXCollections.observableArrayList(control.getPostsAll());
+        //ObservableList<ArrayList<Posts>> observableList;
+        //observableList = FXCollections.observableArrayList(control.getPostsAll());
         
-        userTable.setCellValueFactory(new PropertyValueFactory<Posts,String>("author"));
-        dateTable.setCellValueFactory(new PropertyValueFactory<Posts,String>("timestamp"));
-        meowTable.setCellValueFactory(new PropertyValueFactory<Posts,String>("post"));
+        userTable.setCellValueFactory(new PropertyValueFactory<>("author"));
+        dateTable.setCellValueFactory(new PropertyValueFactory<>("timestamp"));
+        meowTable.setCellValueFactory(new PropertyValueFactory<>("post"));
         
-        table.setItems(observableList);
+        //table.setItems(observableList);
     }
   
     
