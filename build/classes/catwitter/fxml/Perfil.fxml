@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.PerfilController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.PerfilController">
    <top>
       <HBox blendMode="EXCLUSION" prefHeight="34.0" prefWidth="900.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="CENTER">
          <children>
@@ -152,38 +152,21 @@
                            <font>
                               <Font name="Consolas Bold" size="14.0" />
                            </font></Label>
-                        <Label fx:id="nameLabel" prefHeight="29.0" prefWidth="154.0" style="-fx-border-color: black;" GridPane.columnIndex="1">
-                           <GridPane.margin>
-                              <Insets left="10.0" />
-                           </GridPane.margin>
-                           <graphic>
-                              <TextField fx:id="nameTextField" style="-fx-background-color: transparent;">
-                                 <font>
-                                    <Font name="Consolas" size="12.0" />
-                                 </font>
-                              </TextField>
-                           </graphic>
-                        </Label>
-                        <Label fx:id="userLabel" prefHeight="29.0" prefWidth="154.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <GridPane.margin>
-                              <Insets left="10.0" />
-                           </GridPane.margin>
-                           <graphic>
-                              <TextField fx:id="userTextField" style="-fx-background-color: transparent;">
-                                 <font>
-                                    <Font name="Consolas" size="12.0" />
-                                 </font></TextField>
-                           </graphic></Label>
-                        <Label fx:id="formLabel" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <GridPane.margin>
-                              <Insets left="10.0" />
-                           </GridPane.margin>
-                           <graphic>
-                              <TextField fx:id="formTextField" prefHeight="27.0" prefWidth="150.0" style="-fx-background-color: transparent;">
-                                 <font>
-                                    <Font name="Consolas" size="12.0" />
-                                 </font></TextField>
-                           </graphic></Label>
+                        <TextField fx:id="nameTextField" style="-fx-background-color: transparent; -fx-border-color: black;" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Consolas" size="12.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="userTextField" style="-fx-background-color: transparent; -fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Consolas" size="12.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="formTextField" prefHeight="27.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Consolas" size="12.0" />
+                           </font>
+                        </TextField>
                      </children>
                   </GridPane>
                   <GridPane blendMode="BLUE" prefHeight="111.0" prefWidth="370.0">
@@ -216,7 +199,7 @@
                               </TextField>
                            </graphic>
                         </Label>
-                        <Button fx:id="alterarLabel" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" style="-fx-background-color: #D2B48C; -fx-text-fill: Black;" text="Alterar" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Button fx:id="alterarLabel" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="37.0" prefWidth="82.0" style="-fx-background-color: transparent; -fx-text-fill: Black; -fx-border-color: black;" text="Alterar" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
                               <Font name="Calibri" size="12.0" />
                            </font>
@@ -224,7 +207,7 @@
                               <Insets />
                            </opaqueInsets>
                            <GridPane.margin>
-                              <Insets bottom="5.0" left="200.0" />
+                              <Insets bottom="5.0" left="180.0" right="10.0" />
                            </GridPane.margin>
                         </Button>
                         <Label prefHeight="18.0" prefWidth="67.0" text="Celular:" GridPane.rowIndex="1">
@@ -246,6 +229,11 @@
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin></Label>
+                        <Button fx:id="showData" mnemonicParsing="false" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-text-fill: black;" text="Mostrar" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="15.0" />
+                           </GridPane.margin>
+                        </Button>
                      </children>
                   </GridPane>
                </children>

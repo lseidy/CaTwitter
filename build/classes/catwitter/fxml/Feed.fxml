@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.FeedController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #FAF0E6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="catwitter.FeedController">
    <top>
       <HBox alignment="CENTER_LEFT" blendMode="EXCLUSION" prefHeight="42.0" prefWidth="900.0" style="-fx-background-color: #DEB887;" BorderPane.alignment="TOP_LEFT">
          <children>
@@ -42,7 +42,7 @@
          <children>
             <HBox alignment="CENTER" style="-fx-background-color: #F5DEB3;">
                <children>
-                  <Button fx:id="searchButton" alignment="TOP_LEFT" blendMode="DARKEN" mnemonicParsing="false" prefHeight="33.0" prefWidth="181.0" style="-fx-background-color: transparent;" text="Buscar Pet-Migo">
+                  <Button fx:id="searchButton" alignment="TOP_LEFT" blendMode="DARKEN" mnemonicParsing="false" prefHeight="33.0" prefWidth="175.0" style="-fx-background-color: transparent;" text="Buscar Pet-Migo">
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -96,7 +96,20 @@
                   <Insets left="-5.0" />
                </padding>
             </HBox>
-            <Pane blendMode="GREEN" prefHeight="495.0" prefWidth="170.0" />
+            <Pane blendMode="GREEN" prefHeight="439.0" prefWidth="170.0">
+               <children>
+                  <Button fx:id="showFeed" layoutX="-1.0" minWidth="48.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="170.0" text="Ver Feed">
+                     <font>
+                        <Font name="Consolas" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets top="5.0" />
+                     </opaqueInsets>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></Pane>
             <Pane prefHeight="41.0" prefWidth="170.0" style="-fx-background-color: #F5DEB3;">
                <children>
                   <Button fx:id="logoutButton" blendMode="DARKEN" layoutY="-2.0" minWidth="39.0" mnemonicParsing="false" opacity="0.8" prefHeight="44.0" prefWidth="170.0" style="-fx-background-color: transparent; -fx-text-fill: black;" text="Meout" textAlignment="RIGHT" textFill="#000000dd">
@@ -125,9 +138,9 @@
          <children>
             <TableView fx:id="table" prefHeight="628.0" prefWidth="730.0">
               <columns>
-                <TableColumn fx:id="userTable" prefWidth="159.99999392032623" text="User" />
-                <TableColumn fx:id="dateTable" minWidth="0.79998779296875" prefWidth="215.19998168945312" text="Date" />
-                  <TableColumn fx:id="meowTable" prefWidth="356.0000305175781" text="Meow Thoughts" />
+                <TableColumn fx:id="author" prefWidth="159.99999392032623" text="User" />
+                <TableColumn fx:id="timestamp" minWidth="0.79998779296875" prefWidth="215.19998168945312" text="Date" />
+                  <TableColumn fx:id="post" prefWidth="356.0000305175781" text="Meow Thoughts" />
               </columns>
             </TableView>
          </children></VBox>

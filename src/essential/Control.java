@@ -33,8 +33,6 @@ public class Control extends Users{
     }
 
 
-
-
     public Control() {
         allusers = new ArrayList();
         postsAll = new ArrayList();

@@ -1,7 +1,11 @@
 package essential;
 
+import catwitter.Main;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -27,6 +31,21 @@ public class Users extends Posts{
     private List links;
     private Posts post;
     private ArrayList<Posts> posts = new ArrayList<>();
+
+    public ArrayList<Posts> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(String mensagem, String author) {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	Date date = new Date();        
+	String timestamp = dateFormat.format(date);
+        
+        this.post = new Posts(author, timestamp, mensagem);
+        
+        Main.control.setPostsAll(post);
+        
+    }
     private String adminUser = "admin";
     private String adminPassWord = "UFP31";
     
@@ -110,21 +129,7 @@ public class Users extends Posts{
     public void setLinks(List links) {
         this.links = links;
     }
-    public ArrayList<Posts> getPosts() {
-        return posts;
-    }
+   
 
-    public void setPosts(String mensagem) {
-        post = new Posts();
-        
-        post.setPost(mensagem);
-        post.setAuthor(this.getUsername());
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        post.setTimestamp(String.valueOf(timestamp));
-        
-        this.posts.add(post);
-        //Control.setPostsAll(post);
-        
-    }
 
 }

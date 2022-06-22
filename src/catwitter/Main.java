@@ -13,7 +13,7 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
    
-    private static Scene sceneLogin, sceneAdm, sceneFeed, scenePerfil;
+    private static Scene sceneLogin, sceneAdm, sceneFeed, scenePerfil, sceneBusca;
     private static Stage primaryStage;
     public static essential.Control control = new essential.Control();
 
@@ -25,21 +25,23 @@ public class Main extends Application {
         FXMLLoader adm = new FXMLLoader(getClass().getResource("fxml/Cadastro.fxml"));
         FXMLLoader feed = new FXMLLoader(getClass().getResource("fxml/Feed.fxml"));
         FXMLLoader perfil = new FXMLLoader(getClass().getResource("fxml/Perfil.fxml"));
+        FXMLLoader bsuca = new FXMLLoader(getClass().getResource("fxml/Busca.fxml"));
         
         primaryStage = stage;
         
-        primaryStage.setTitle("Login");
+        primaryStage.setTitle("Catwitter");
         
         Parent parentPerfil = perfil.load();
         Parent parentLogin = login.load();
         Parent parentAdm = adm.load();
         Parent parentFeed = feed.load();
+        Parent parentBusca = bsuca.load();
        
         sceneFeed = new Scene(parentFeed);
         sceneLogin = new Scene(parentLogin);
         sceneAdm = new Scene(parentAdm);
         scenePerfil = new Scene(parentPerfil);
-        
+        sceneBusca = new Scene(parentBusca); 
         
         stage.setScene(sceneLogin);
         stage.show();
@@ -53,14 +55,14 @@ public class Main extends Application {
                 primaryStage.setScene(sceneAdm);
                 break;
             case 3:
-                //System.out.println(Main.control.getIndex());
                 primaryStage.setScene(sceneFeed);
+                //FeedController.loadTable();
                 break;
             case 4:
-                //System.out.println(Main.control.getIndex());
-                //PerfilController(info.getEmail(), info.getFormacao(), info.getCelular(), info.getName(), info.getUsername());
                 primaryStage.setScene(scenePerfil);
                 break;
+            case 5:
+                primaryStage.setScene(sceneBusca);
         }
     }
 

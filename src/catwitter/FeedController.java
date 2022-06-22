@@ -43,17 +43,21 @@ public class FeedController implements Initializable {
     @FXML
     private Label loggedText;
     private final Control control = Main.control;
+    private int n=0;
    
     
     @FXML
-    private TableView<ArrayList<Posts>> table;
+    private TableView<Posts> table;
     @FXML
-    private TableColumn<ArrayList<Posts>, String> userTable;
+    private TableColumn<Posts, String> author;
     @FXML
-    private TableColumn<ArrayList<Posts>, String> dateTable;
+    private TableColumn<Posts, String> timestamp;
     @FXML
-    private TableColumn<ArrayList<Posts>, String> meowTable;
-   
+    private TableColumn<Posts, String> post;
+    
+    ObservableList<Posts> list = FXCollections.observableArrayList();
+    @FXML
+    private Button showFeed;
     
 
     /**
@@ -61,6 +65,20 @@ public class FeedController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        searchButton.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event) {
+            Main.changeScreen(5);
+            }   
+        });
+        showFeed.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event) {
+            loadTable();
+            }
+            
+        });
+
         logoutButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -70,22 +88,19 @@ public class FeedController implements Initializable {
         perfilButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //loadTable(control.getPostsAll());
                 Main.changeScreen(4);
             }
-        });
-    }
-    
-    private void loadTable(ArrayList<Posts> user){
-        //ObservableList<ArrayList<Posts>> observableList;
-        //observableList = FXCollections.observableArrayList(control.getPostsAll());
-        
-        userTable.setCellValueFactory(new PropertyValueFactory<>("author"));
-        dateTable.setCellValueFactory(new PropertyValueFactory<>("timestamp"));
-        meowTable.setCellValueFactory(new PropertyValueFactory<>("post"));
-        
-        //table.setItems(observableList);
-    }
-  
-    
+        }); 
 }
+
+    public void loadTable() {
+        author.setCellValueFactory(new PropertyValueFactory<Posts, String>("author"));
+        timestamp.setCellValueFactory(new PropertyValueFactory<Posts, String>("timestamp"));
+        post.setCellValueFactory(new PropertyValueFactory<Posts, String>("post"));
+
+        for(Posts i : control.getPostsAll()){
+            list.add(control.getPostsAll().get(n));
+            n++;
+        }
+        table.setItems(list); 
+    }}

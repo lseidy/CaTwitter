@@ -1,9 +1,21 @@
 package essential;
 
+import static catwitter.Main.control;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Posts  {
+
+    public Posts(String author, String timestamp, String post) {
+        this.author = author;
+        this.timestamp = timestamp;
+        this.post = post;
+    }
+
+    public Posts() {
+    }
+
     private String author;
     private String timestamp;
     private String post;
@@ -31,6 +43,8 @@ public class Posts  {
     public void setPost(String post) {
         this.post = post;
     }
+
+ 
 
 
 }
